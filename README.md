@@ -30,9 +30,11 @@ Generally,web, or Mobile solutions are Implemented based on what is called Three
 
 ![image](images/Screenshot_3.png)
 
+- Create a volume of 10Gib
+
 ![image](images/Screenshot_1.png)
 
-  - Create a volume of 10Gib
+
 
 ![image](images/Screenshot_2.png)
 
