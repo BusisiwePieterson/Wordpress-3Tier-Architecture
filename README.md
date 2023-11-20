@@ -1,10 +1,10 @@
 
 
-# Implementing  WoprdPress website with Logical Volume Management (LVM) 
+# Implementing  WordPress website with Logical Volume Management (LVM) 
 
 ### Project Scope:
 
-- Configure storage subsytem for Web and Database servers, we will work with disks, partitions and volumes in Linux.
+- Configure storage subsystem for Web and Database servers, we will work with disks, partitions, and volumes in Linux.
 
 - Install WordPress and connect it to a remote My SQL database server.
 
@@ -13,13 +13,13 @@
 
 ### Three-tier Architecture
 
-Generally,web, or Mobile solutions are Implemented based on what is called Three-tier Architecture
+Generally, web or Mobile solutions are Implemented based on what is called Three-tier Architecture
 
-**Presentation Layer(PL)**: This is the user interface such as the client server or browser on your Laptops.
+**Presentation Layer(PL)**: This is the user interface such as the client-server or browser on your Laptops.
 
-**Business Layer(BL)**: This is the backened program that implements bsiness logic. Application or webserver.
+**Business Layer(BL)**: This is the backend program that implements business logic. Application or webserver.
 
-**Data Access or Management Layer(DAL)**: layer for the computer data storage and data access. Database server or File system ssuch as FTP server or NFs server.
+**Data Access or Management Layer(DAL)**: layer for the computer data storage and data access. Database server or File system such as FTP server or NFs server.
 
 
 ##
@@ -42,7 +42,7 @@ Generally,web, or Mobile solutions are Implemented based on what is called Three
 
 ![image](images/Screenshot_4.png)
 
-3. Use `lsblk` to inspect what block devices are attcahed to the server. Names of your newly created devices will show. 
+3. Use `lsblk` to inspect what block devices are attached to the server. Names of your newly created devices will show. 
 
    - All devices reside in `/dev/directory`, inspect it with `ls /dev/`
 
@@ -66,7 +66,7 @@ Generally,web, or Mobile solutions are Implemented based on what is called Three
 
 7. Run `sudo yum install lvm2` to install the LMV2 package.  Then `sudo lvmdiskscan` to check for available partitions.
 
-8. Use `pvcreate` to mark each of 3 disks as physical volumes to be used by LVM.
+8. Use `pvcreate` to mark each of the 3 disks as physical volumes to be used by LVM.
 
    Run
     - `sudo pvcreate /dev/xvdf1`
@@ -125,7 +125,7 @@ Generally,web, or Mobile solutions are Implemented based on what is called Three
 
 ![image](images/Screenshot_18.png)
 
-18. Run `sudo vi /etc/fstab` to update the file so that the mount config will persist after retsrat of the server. Update the UUID that you copied.
+18. Run `sudo vi /etc/fstab` to update the file so that the mount config will persist after restart of the server. Update the UUID that you copied.
 
 ![image](images/Screenshot_19.png)
 
@@ -189,7 +189,7 @@ setsebool -P httpd_execmem 1
 
 ## Prepare the Database Server
 
-**Launch a second RedHat instance, repeat the same steps as for the web server, use `db-lv` instead of `apps-lv` and mout it to `/db` directory instead of `/var/www/html`**
+**Launch a second RedHat instance, repeat the same steps as for the web server, use `db-lv` instead of `apps-lv`, and mount it to `/db` directory instead of `/var/www/html`**
 
 1. Install MySQL on the newly created DB Server
 
@@ -213,9 +213,9 @@ exit
 ```
 ![image](images/Screenshot_28.png)
 
-### Configure WordPres to connect to remote database
+### Configure WordPress to connect to a remote database
 
-  - Open MySQL on port **3306** on DB Server and allow access to the DB Server only from your web server's private IP.
+  - Open MySQL on port **3306** on the DB Server and allow access to the DB Server only from your web server's private IP.
 
 ![image](images/Screenshot_29.png)
 
@@ -228,7 +228,7 @@ exit
 
 ![image](images/Screenshot_31.png)
 
-3. Change permissions and configuration so Apache could use Wordpress
+3. Change permissions and configuration so Apache can use WordPress
 
    - `cd /var/www/html`
 
@@ -250,7 +250,7 @@ exit
 
 ![image](images/Screenshot_32.png)
 
-4. Access from your browser the link to your Wordpress `http://<web-server0public-ip-addess>/wordpress/`
+4. Access from your browser the link to your WordPress `http://<web-server0public-ip-addess>/wordpress/`
 
 ![image](images/Screenshot_37.png)
 
