@@ -1,13 +1,38 @@
-# Wordpress-3Tier-Architecture
 
 
-## Implementing LVM on Linux servers(We and Database Servers)
-1. Launch a RedHat EC2 instance, and create 3 volumes in the same AZ as your EC2 instance, each volume should be 10 GiB.
+# Implementing  WoprdPress website with Logical Volume Management (LVM) 
+
+### Project Scope:
+
+- Configure storage subsytem for Web and Database servers, we will work with disks, partitions and volumes in Linux.
+
+- Install WordPress and connect it to a remote My SQL database server.
+
+
+##
+
+### Three-tier Architecture
+
+Generally,web, or Mobile solutions are Implemented based on what is called Three-tier Architecture
+
+**Presentation Layer(PL)**: This is the user interface such as the client server or browser on your Laptops.
+
+**Business Layer(BL)**: This is the backened program that implements bsiness logic. Application or webserver.
+
+**Data Access or Management Layer(DAL)**: layer for the computer data storage and data access. Database server or File system ssuch as FTP server or NFs server.
+
+
+##
+
+1. Launch a RedHat EC2 instance, and create 3 volumes in the same AZ as your EC2 instance.
+
 
 
 ![image](images/Screenshot_3.png)
 
 ![image](images/Screenshot_1.png)
+
+  - Create a volume of 10Gib
 
 ![image](images/Screenshot_2.png)
 
@@ -209,21 +234,25 @@ exit
 
    - `sudo vi wp-config.php`
 
-   Edit the following: `DB_NAME DB_USER DB_PASSWORD LOCALHOST`
+   - Edit the following: `DB_NAME DB_USER DB_PASSWORD LOCALHOST`
+
+   - enable port 80 from everywhere **0.0.0.0/0**
+  
      
 
 ![image](images/Screenshot_33.png)
 
-
-
-![image](images/Screenshot_34.png)
+![image](images/Screenshot_35.png)
+ 
+   
 
 ![image](images/Screenshot_32.png)
 
-![image](images/Screenshot_35.png)
-
-![image](images/Screenshot_36.png)
+4. Access from your browser the link to your Wordpress `http://<web-server0public-ip-addess>/wordpress/`
 
 ![image](images/Screenshot_37.png)
 
 ![image](images/Screenshot_38.png)
+
+
+## THE END !!
