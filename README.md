@@ -24,7 +24,7 @@ Generally, web or Mobile solutions are Implemented based on what is called Three
 
 ##
 
-1. Launch a RedHat EC2 instance, and create 3 volumes in the same AZ as your EC2 instance.
+1. Launch a RedHat EC2 instance, and create 3 volumes in the same AZ as your EC2 instance
 
 
 
